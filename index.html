@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        
+        <title>Crypt</title>
+
+        <link rel="stylesheet" href="CSS/reset.css">
+        <link rel="stylesheet" href="CSS/index.css">
+
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>Crypt</h1>
+        </header>
+
+        <main>
+            <div class="prompt">
+                <div class="window-head">
+                    <span class="window-name">Crypt</span><button class="window-button">-</button><button class="window-button">&#9633</button><button class="window-button">x</button>
+                </div><div class="prompt-background">
+                    <div class="output-area">
+                        <textarea class="output-text" id="output-area" disabled>Type "/cmds" to view a list of commands</textarea>
+                    </div><div class="input-area">
+                        <textarea class="input-text" id="input-area" spellcheck="false" autocomplete="off" autofocus></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <section class="tutorial">
+                <h2>Hints</h2>
+                <div class="tutorial1">
+                    <h3>Encrypt</h3>
+                    <img class="tutorial-img" src="Assets/EncryptPrompt.png">
+                    <p class="tutorial-msg">Type <em>/encrypt</em> followed by your message to be encrypted</p>
+                </div><div class="tutorial2">
+                    <h3>Decrypt</h3>
+                    <img class="tutorial-img" src="Assets/DecryptPrompt.png">
+                    <p class="tutorial-msg">Type <em>/decrypt</em> followed by your message to be decrypted</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            
+        </footer>
+    </body>
+</html>
+
+<script src="Scripts/index.js"></script>
