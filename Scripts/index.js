@@ -2,7 +2,7 @@ const output = document.getElementById("output-area");
 const input = document.getElementById("input-area");
 var lastGeneratedMessage;
 
-const NewAlphabet = [
+const newAlphabet = [
     ["a", "ai"],
     ["e", "enter"],
     ["i", "imes"],
@@ -23,19 +23,28 @@ const commands = {
     },
 
     encrypt: (message) => {
+        var encrypted = "";
+
         message = message.toLowerCase();
 
-        for(var i=0; i < NewAlphabet.length; i++){
-            message = message.replaceAll(NewAlphabet[i][0], NewAlphabet[i][1]);
+        for(var i=0; i < message.length; i++){
+            for(var n=0; n < newAlphabet.length; n++){
+                if(message[i] === newAlphabet[n][0]){
+                    encrypted += newAlphabet[n][1];
+                    break
+                }else if(n == newAlphabet.length-1){
+                    encrypted += message[i];
+                }
+            }
         }
 
-        lastGeneratedMessage = message
-        output.value += "\n" + message;
+        lastGeneratedMessage = encrypted
+        output.value += "\n" + encrypted;
     },
 
     decrypt: (message) => {
-        for(var i=0; i < NewAlphabet.length; i++){
-            message = message.replaceAll(NewAlphabet[i][1], NewAlphabet[i][0]);
+        for(var i=0; i < newAlphabet.length; i++){
+            message = message.replaceAll(newAlphabet[i][1], newAlphabet[i][0]);
         }
 
         lastGeneratedMessage = message
